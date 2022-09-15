@@ -1,0 +1,24 @@
+<p>beca-listar works!</p>
+
+<table mat-table [dataSource] ="dataSource" class ="mat-elevation-z8">
+
+    <ng-container matColumnDef = "idInforBeca">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef= "let element">{{element.idInforBeca}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef = "BenefiBeca">
+        <th mat-header-cell *matHeaderCellDef> Beneficios</th>
+        <td mat-cell *matCellDef= "let element"> {{element.BenefiBeca}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef = "CondicioBeca">
+        <th mat-header-cell *matHeaderCellDef> Condiciones </th>
+        <td mat-cell *matCellDef = "let element">{{element.CondicioBeca}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef= "dispayColumns"></tr>
+    <tr mat-row *matRowDef= "let row; columns:dispayColumns;"></tr>
+
+</table>
+
