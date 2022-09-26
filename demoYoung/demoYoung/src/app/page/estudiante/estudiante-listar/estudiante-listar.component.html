@@ -1,0 +1,58 @@
+<div class="container">
+    <div style=" text-align: center;">
+        <h1>Lista de estudiantes</h1>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.nameEstudiante}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="carrera">
+            <th mat-header-cell *matHeaderCellDef> Carrera </th>
+            <td mat-cell *matCellDef="let element"> {{element.carreraEstudiante}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="universidad">
+        <th mat-header-cell *matHeaderCellDef> Universidad </th>
+        <td mat-cell *matCellDef="let element"> {{element.UniversidadEstudiante}} </td>
+        </ng-container>
+
+    <ng-container matColumnDef="accion1">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary"
+            [routerLink]="['edicion', element?.id]">Actualizar</button>
+  
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="accion2">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="warn" (click)="confirmar(element.id)">Eliminar</button>
+  
+        </td>
+      </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div class="example-button-container">
+
+        <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon"
+            routerLink="/estudiantes/nuevo">
+            <mat-icon>plus_one</mat-icon>
+        </button>
+    </div>

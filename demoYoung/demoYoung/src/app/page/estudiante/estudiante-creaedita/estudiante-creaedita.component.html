@@ -1,0 +1,34 @@
+<p>estudiante-creaedita works!</p>
+<div class="container">
+
+    <h1>Estudiante</h1>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Id</mat-label>
+      <input matInput placeholder="Id" [(ngModel)]="estudiante.id">
+    </mat-form-field>
+  
+    <br>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput required placeholder="name" [(ngModel)]="estudiante.nameEstudiante">
+  
+    </mat-form-field>   
+  
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Carrera</mat-label>
+      <input type="email" matInput required placeholder="email" [(ngModel)]="estudiante.carreraEstudiante">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Universidad</mat-label>
+      <input type="email" matInput required placeholder="universidad" [(ngModel)]="estudiante.UniversidadEstudiante">
+    </mat-form-field>
+<br>
+    <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/estudiantes">Cancelar</button>
+    <p>{{mensaje}}</p>
+  
+  </div>
