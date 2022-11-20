@@ -1,0 +1,6 @@
+export class Beca {
+    idBeca: number = 0;
+    beneficioBeca: string = "";
+    condicionBeca: string = "";
+    idOfertaEmpleo: number = 0;
+}
